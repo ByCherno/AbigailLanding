@@ -149,7 +149,10 @@ nav {
 @media(max-width:680px){ .bio-grid { grid-template-columns: 1fr; gap: 36px; } }
 .bio-photo {
   border-radius: 14px; overflow: hidden;
-  aspect-ratio: 3/4; background: var(--sky);
+  aspect-ratio: 3/4; 
+  background-image: url("./images/abi.png");
+  background-size: cover;
+  background-position: center;
   position: relative; display: flex; align-items: flex-end;
 }
 .bio-letter { font-family: 'Cormorant Garamond', serif; font-size: 160px; color: var(--navy); opacity: .06; position: absolute; bottom: -40px; right: -10px; font-style: italic; line-height: 1; pointer-events: none; }
@@ -276,7 +279,7 @@ footer a:hover { color: rgba(255,255,255,.6); }
         <a class="btn-navy" href="https://www.instagram.com/businessenglish.abbie" target="_blank">Lo quiero — escribime por Instagram</a>
         <div class="lead-note">Te lo mando directo por DM.</div>
       </div>
-      <div class="lead-img"><img src="podcast_cover.png" alt="Business English with Abi"></div>
+      <div class="lead-img"><img src="./images/podcast_cover.png" alt="Business English with Abi"></div>
     </div>
   </div>
 </section>
@@ -372,7 +375,7 @@ footer a:hover { color: rgba(255,255,255,.6); }
 <!-- PODCAST -->
 <section class="pod-section" id="podcast">
   <div class="pod-grid reveal">
-    <div class="pod-cover"><img src="podcast_cover.png" alt="Business English with Abi"></div>
+    <div class="pod-cover"><img src="./images/podcast_cover.png" alt="Business English with Abi"></div>
     <div>
       <div class="pod-kicker">Podcast</div>
       <div class="pod-title">Business English<br>with Abi</div>
