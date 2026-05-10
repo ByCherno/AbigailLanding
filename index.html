@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigail Cernotto | Business English for Sales Professionals</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #1a2744;
+  --navy2:  #243158;
+  --sky:    #edf2fc;
+  --cream:  #faf9f6;
+  --warm:   #f2ede6;
+  --border: #e0dbd4;
+  --muted:  #6e6860;
+  --ink:    #18180f;
+  --white:  #ffffff;
+  --accent: #c4965a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-weight: 300; line-height: 1.65; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,249,246,.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--navy); letter-spacing: .02em; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-link { font-size: 12px; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: .03em; transition: color .2s; }
+.nav-link:hover { color: var(--navy); }
+.nav-cta { font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--white); background: var(--navy); text-decoration: none; padding: 9px 20px; border-radius: 999px; transition: opacity .2s; }
+.nav-cta:hover { opacity: .85; }
+@media(max-width:600px){ .nav-links .nav-link { display: none; } }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 96px 32px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 10%, #2d4070 0%, transparent 55%),
+              radial-gradient(ellipse at 10% 90%, #0f1a35 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--accent); font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: up .5s .1s both;
+}
+.hero-kicker::before { content: ''; width: 28px; height: 1px; background: var(--accent); opacity: .6; }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 7.5vw, 70px);
+  font-weight: 600; line-height: 1.08; color: var(--white);
+  max-width: 680px;
+  animation: up .7s .2s both;
+}
+.hero h1 em { font-style: italic; color: #a8c4f0; }
+.hero-divider { width: 48px; height: 1px; background: var(--accent); opacity: .5; margin: 32px 0; animation: up .5s .35s both; }
+.hero-sub {
+  font-size: clamp(15px, 2.2vw, 18px); color: rgba(255,255,255,.55);
+  line-height: 1.75; max-width: 520px; font-weight: 300;
+  animation: up .6s .45s both;
+}
+.hero-btns { margin-top: 44px; display: flex; gap: 12px; flex-wrap: wrap; animation: up .6s .55s both; }
+.btn-accent {
+  display: inline-block; background: var(--accent); color: var(--white);
+  font-size: 13px; font-weight: 500; letter-spacing: .04em;
+  padding: 14px 30px; border-radius: 999px; text-decoration: none;
+  transition: opacity .2s, transform .15s;
+}
+.btn-accent:hover { opacity: .9; transform: translateY(-1px); }
+.btn-ghost-w {
+  display: inline-block; background: transparent;
+  border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.6);
+  font-size: 13px; font-weight: 300; padding: 14px 30px; border-radius: 999px;
+  text-decoration: none; transition: all .2s;
+}
+.btn-ghost-w:hover { border-color: rgba(255,255,255,.5); color: var(--white); }
+
+/* ── SHARED ── */
+.section { padding: 80px 32px; }
+.inner { max-width: 680px; margin: 0 auto; }
+.inner-wide { max-width: 1020px; margin: 0 auto; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy); opacity: .5; margin-bottom: 14px;
+}
+.kicker::before { content: ''; width: 20px; height: 1px; background: currentColor; }
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4.5vw, 44px); font-weight: 600; line-height: 1.12;
+  color: var(--navy); margin-bottom: 20px;
+}
+.sec-title em { font-style: italic; }
+.body { font-size: 15px; color: var(--muted); line-height: 1.85; font-weight: 300; }
+.rule { width: 36px; height: 1.5px; background: var(--accent); opacity: .4; margin: 22px 0; }
+.btn-navy {
+  display: inline-block; background: var(--navy); color: var(--white);
+  font-size: 13px; font-weight: 500; padding: 13px 26px; border-radius: 999px;
+  text-decoration: none; transition: opacity .2s, transform .15s;
+}
+.btn-navy:hover { opacity: .85; transform: translateY(-1px); }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── TENSION BAR ── */
+.tension {
+  background: var(--warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 40px 32px;
+}
+.tension-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; }
+.tension-item {
+  padding: 20px 28px; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.tension-item:last-child { border-right: none; }
+@media(max-width:640px){ .tension-item { border-right: none; border-bottom: 1px solid var(--border); } .tension-item:last-child { border-bottom: none; } }
+.tension-q { font-size: 14px; font-weight: 400; color: var(--ink); line-height: 1.5; }
+.tension-q strong { font-weight: 500; }
+.tension-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: .6; }
+
+/* ── LEAD MAGNET ── */
+.lead-section { background: var(--sky); border-top: 1px solid #d8e4f5; border-bottom: 1px solid #d8e4f5; }
+.lead-box { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+@media(max-width:560px){ .lead-box { grid-template-columns: 1fr; } }
+.lead-pretitle { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--navy); opacity: .5; margin-bottom: 10px; }
+.lead-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 10px; line-height: 1.25; }
+.lead-sub { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 22px; }
+.lead-img { width: 130px; height: 130px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 36px rgba(26,39,68,.12); flex-shrink: 0; }
+.lead-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lead-note { font-size: 11px; color: var(--muted); margin-top: 10px; opacity: .65; }
+
+/* ── BIO ── */
+.bio-section { background: var(--white); }
+.bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+@media(max-width:680px){ .bio-grid { grid-template-columns: 1fr; gap: 36px; } }
+.bio-photo {
+  border-radius: 14px; overflow: hidden;
+  aspect-ratio: 3/4; background: var(--sky);
+  position: relative; display: flex; align-items: flex-end;
+}
+.bio-letter { font-family: 'Cormorant Garamond', serif; font-size: 160px; color: var(--navy); opacity: .06; position: absolute; bottom: -40px; right: -10px; font-style: italic; line-height: 1; pointer-events: none; }
+.bio-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px; background: linear-gradient(to top, rgba(26,39,68,.65), transparent); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.65); }
+.bio-creds { display: flex; flex-direction: column; gap: 8px; margin-top: 22px; }
+.cred { display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; background: var(--sky); border-radius: 10px; font-size: 13px; color: var(--navy); line-height: 1.45; }
+.cred-line { width: 3px; height: 3px; border-radius: 50%; background: var(--accent); margin-top: 5px; flex-shrink: 0; }
+
+/* ── PROGRAMS ── */
+.prog-section { background: var(--cream); }
+.prog-intro { max-width: 560px; margin-bottom: 44px; }
+.prog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+.prog { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 30px 28px; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.prog:hover { border-color: var(--navy); box-shadow: 0 8px 36px rgba(26,39,68,.07); transform: translateY(-2px); }
+.prog.feat { border-color: var(--navy); border-width: 1.5px; position: relative; overflow: hidden; }
+.prog.feat::before { content: 'Nuevo'; position: absolute; top: 18px; right: 18px; font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); background: rgba(196,150,90,.1); padding: 3px 9px; border-radius: 999px; }
+.prog-cat { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--navy); opacity: .45; margin-bottom: 10px; }
+.prog-name { font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 12px; }
+.prog-hook { font-size: 14px; color: var(--ink); font-weight: 400; line-height: 1.65; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.prog-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.prog-list li { font-size: 13px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.5; }
+.prog-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 1px; background: var(--accent); }
+.prog-guar { padding: 12px 14px; background: var(--sky); border-radius: 10px; font-size: 12px; color: var(--navy); line-height: 1.55; margin-bottom: 22px; }
+.prog-link { font-size: 12px; font-weight: 500; color: var(--navy); text-decoration: none; letter-spacing: .03em; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: border-color .2s, gap .2s; }
+.prog-link:hover { border-color: var(--navy); gap: 10px; }
+
+/* ── PODCAST ── */
+.pod-section { background: var(--navy); padding: 80px 32px; }
+.pod-grid { display: grid; grid-template-columns: auto 1fr; gap: 44px; align-items: center; max-width: 680px; margin: 0 auto; }
+@media(max-width:560px){ .pod-grid { grid-template-columns: 1fr; } }
+.pod-cover { width: 150px; height: 150px; border-radius: 18px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,.35); flex-shrink: 0; }
+.pod-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pod-kicker { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 10px; }
+.pod-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--white); line-height: 1.15; margin-bottom: 10px; }
+.pod-sub { font-size: 14px; color: rgba(255,255,255,.45); line-height: 1.75; margin-bottom: 22px; }
+.pod-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.pod-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.6); font-size: 12px; padding: 9px 18px; border-radius: 999px; text-decoration: none; transition: border-color .2s, color .2s; }
+.pod-btn:hover { border-color: rgba(255,255,255,.35); color: var(--white); }
+
+/* ── HOW ── */
+.how-section { background: var(--white); }
+.steps { margin-top: 36px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.step { display: flex; gap: 22px; padding: 24px 26px; border-bottom: 1px solid var(--border); align-items: flex-start; transition: background .2s; }
+.step:hover { background: var(--cream); }
+.step:last-child { border-bottom: none; }
+.step-n { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--navy); opacity: .18; flex-shrink: 0; line-height: 1; min-width: 26px; }
+.step-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ── CTA FINAL ── */
+.cta-section { background: var(--navy); padding: 96px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, #2d4070 0%, transparent 65%); pointer-events: none; }
+.cta-inner { max-width: 560px; margin: 0 auto; position: relative; }
+.cta-kicker { font-size: 10px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; color: var(--white); line-height: 1.1; margin-bottom: 18px; }
+.cta-title em { font-style: italic; color: #a8c4f0; }
+.cta-sub { font-size: 15px; color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 44px; max-width: 420px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.cta-note { font-size: 11px; color: rgba(255,255,255,.25); letter-spacing: .05em; }
+.cta-or { font-size: 12px; color: rgba(255,255,255,.25); }
+.cta-ig { font-size: 13px; color: rgba(255,255,255,.45); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+.cta-ig:hover { color: rgba(255,255,255,.75); border-color: rgba(255,255,255,.4); }
+
+/* ── FOOTER ── */
+footer { background: #111827; color: rgba(255,255,255,.25); text-align: center; padding: 32px 24px; font-size: 11px; letter-spacing: .05em; line-height: 2.4; }
+footer a { color: rgba(255,255,255,.25); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.6); }
+
+@keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Abigail Cernotto</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#programas">Programas</a>
+    <a class="nav-link" href="#podcast">Podcast</a>
+    <a class="nav-cta" href="https://calendly.com/abigailcernotto/30min" target="_blank">Agendá una sesión</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Business English · Setters & Closers · LATAM</div>
+    <h1>Ya sabés vender.<br>Ahora <em>sostenelo</em><br>en inglés.</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Entrenamiento en inglés profesional para setters y closers latinoamericanos que quieren performar con la misma seguridad en el mercado angloparlante que en su idioma nativo.</p>
+    <div class="hero-btns">
+      <a class="btn-accent" href="https://calendly.com/abigailcernotto/30min" target="_blank">Agendá una sesión de diagnóstico</a>
+      <a class="btn-ghost-w" href="#programas">Ver programas</a>
+    </div>
+  </div>
+</section>
+
+<!-- TENSION -->
+<section class="tension">
+  <div class="tension-inner">
+    <div class="tension-item">
+      <div class="tension-dot"></div>
+      <div class="tension-q">Cerrás deals en español <strong>con naturalidad.</strong> En inglés, algo se apaga.</div>
+    </div>
+    <div class="tension-item">
+      <div class="tension-dot"></div>
+      <div class="tension-q">Entendés la call. Pero <strong>no respondés con la misma autoridad.</strong></div>
+    </div>
+    <div class="tension-item">
+      <div class="tension-dot"></div>
+      <div class="tension-q">Las oportunidades en inglés están. <strong>El inglés todavía no te acompaña.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="section lead-section">
+  <div class="inner reveal">
+    <div class="lead-box">
+      <div>
+        <div class="lead-pretitle">Recurso gratuito</div>
+        <div class="lead-title">¿Y si el problema no fuera tu inglés, sino lo que pensás cuando hablás?</div>
+        <p class="lead-sub">Una mini guía para dejar de disculparte y empezar a sonar como la profesional que ya sos — en inglés. Sin gramática, sin listas de verbos.</p>
+        <a class="btn-navy" href="https://www.instagram.com/businessenglish.abbie" target="_blank">Lo quiero — escribime por Instagram</a>
+        <div class="lead-note">Te lo mando directo por DM.</div>
+      </div>
+      <div class="lead-img"><img src="podcast_cover.png" alt="Business English with Abi"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="section bio-section">
+  <div class="inner-wide">
+    <div class="bio-grid">
+      <div class="bio-photo reveal">
+        <div class="bio-letter">A</div>
+        <div class="bio-caption">Abigail Cernotto · Buenos Aires</div>
+      </div>
+      <div class="reveal">
+        <div class="kicker">Sobre mí</div>
+        <h2 class="sec-title">Entreno la versión en inglés<br>de la profesional <em>que ya sos.</em></h2>
+        <div class="rule"></div>
+        <p class="body">Soy Abi. Mentora en inglés profesional especializada en comunicación de alto impacto para sales professionals.<br><br>Trabajo con setters y closers de LATAM que ya tienen el resultado — y necesitan que su inglés lo refleje. No en un examen. En una discovery call, en una entrevista con un founder americano, en el DM que determina si seguís en el proceso.<br><br>Mi enfoque no es lingüístico solamente. Es de performance. Porque el inglés no es el objetivo. Es la herramienta.</p>
+        <div class="bio-creds">
+          <div class="cred"><div class="cred-line"></div>Workshop presenter — XLIX FAAPI Conference, Tucumán 2025</div>
+          <div class="cred"><div class="cred-line"></div>Workshop presenter — Practical Issues 2025, ASPI Santa Fe</div>
+          <div class="cred"><div class="cred-line"></div>Podcast: Business English with Abi</div>
+          <div class="cred"><div class="cred-line"></div>Clientes particulares y empresas activos en LATAM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section prog-section" id="programas">
+  <div class="inner-wide">
+    <div class="prog-intro reveal">
+      <div class="kicker">Programas</div>
+      <h2 class="sec-title">Dos caminos.<br><em>Un resultado.</em></h2>
+      <p class="body">El punto de entrada depende de dónde estás. El destino es el mismo: performar profesionalmente en inglés, en contextos que importan.</p>
+    </div>
+    <div class="prog-grid">
+
+      <!-- P1 -->
+      <div class="prog reveal">
+        <div class="prog-cat">Particulares · Fundamentos</div>
+        <div class="prog-name">Speak with Presence</div>
+        <div class="prog-hook">Para quien tiene base de inglés pero no se siente lista para usarlo en contextos de presión. Antes de entrar al mercado en inglés, construimos la base que lo sostiene.</div>
+        <ul class="prog-list">
+          <li>Entrenamiento 1:1 · 4 meses</li>
+          <li>Diagnóstico de performance al inicio</li>
+          <li>Inglés funcional para reuniones y contextos profesionales</li>
+          <li>Pronunciación, fluidez y naturalidad al hablar</li>
+          <li>Conversación bajo presión — sin traducir mentalmente</li>
+          <li>Vocabulario de negocio aplicado, no genérico</li>
+        </ul>
+        <div class="prog-guar">Mi compromiso es que llegues al resultado. El tuyo es sostener el proceso. Si cumplís con los requisitos del programa, acompañamos el cierre hasta que el avance sea real.</div>
+        <a class="prog-link" href="https://calendly.com/abigailcernotto/30min" target="_blank">Agendá una sesión de diagnóstico →</a>
+      </div>
+
+      <!-- P2 -->
+      <div class="prog feat reveal">
+        <div class="prog-cat">Particulares · Alto impacto</div>
+        <div class="prog-name">English for Closers</div>
+        <div class="prog-hook">Para setters y closers que ya venden en español. Traducís skills, no idioma. Entrenamos la performance en inglés que convierte — en calls, en entrevistas, en el mercado que querés entrar.</div>
+        <ul class="prog-list">
+          <li>Requiere nivel B2 mínimo</li>
+          <li>Entrenamiento 1:1 · 3 meses</li>
+          <li>Roleplay de discovery, manejo de objeciones y cierre en inglés</li>
+          <li>Análisis y feedback de grabaciones reales</li>
+          <li>Fluidez y confianza que se sostienen bajo presión</li>
+          <li>Perfil, CV y LinkedIn orientados al mercado angloparlante</li>
+          <li>Entrenamiento para aplicaciones y primeras entrevistas en inglés</li>
+        </ul>
+        <div class="prog-guar">Mi compromiso es que llegues al resultado. El tuyo es sostener el proceso. Si cumplís con los requisitos del programa, acompañamos el cierre hasta que puedas sostener una call de ventas completa en inglés.</div>
+        <a class="prog-link" href="https://calendly.com/abigailcernotto/30min" target="_blank">Agendá una sesión de diagnóstico →</a>
+      </div>
+
+      <!-- P3 -->
+      <div class="prog reveal">
+        <div class="prog-cat">Empresas</div>
+        <div class="prog-name">Business English<br>para equipos</div>
+        <div class="prog-hook">Para equipos que necesitan comunicarse en inglés con claridad y autoridad — en ventas, negociaciones, presentaciones o liderazgo.</div>
+        <ul class="prog-list">
+          <li>Diagnóstico del equipo al inicio</li>
+          <li>Programa diseñado según objetivos reales</li>
+          <li>Training grupal, 1:1 o combinado</li>
+          <li>Comunicación ejecutiva y presentaciones de alto impacto</li>
+          <li>Seguimiento y métricas de progreso</li>
+        </ul>
+        <a class="prog-link" href="https://calendly.com/abigailcernotto/30min" target="_blank">Hablemos de tu equipo →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="pod-section" id="podcast">
+  <div class="pod-grid reveal">
+    <div class="pod-cover"><img src="podcast_cover.png" alt="Business English with Abi"></div>
+    <div>
+      <div class="pod-kicker">Podcast</div>
+      <div class="pod-title">Business English<br>with Abi</div>
+      <p class="pod-sub">Inglés profesional sin filtro. Episodios cortos sobre comunicación, presencia y lo que nadie te dice sobre performar en inglés en el mundo real de las ventas.</p>
+      <div class="pod-btns">
+        <a class="pod-btn" href="SPOTIFY_LINK_ACÁ" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Escuchar en Spotify
+        </a>
+        <a class="pod-btn" href="https://www.youtube.com/@abigailcernotto1703" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Ver en YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section how-section">
+  <div class="inner reveal">
+    <div class="kicker">El proceso</div>
+    <h2 class="sec-title">Así trabajo.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <div class="step-title">Agendás una sesión de diagnóstico</div>
+          <div class="step-desc">30 minutos para evaluar tu nivel real de inglés en contexto de ventas y tu experiencia profesional. Evaluamos juntas si tu perfil encaja con cómo trabajo y si soy la persona indicada para acompañarte donde querés llegar. Si venís por English for Closers, la sesión es en inglés.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <div class="step-title">Definimos tu plan de entrenamiento</div>
+          <div class="step-desc">Con el diagnóstico armamos qué trabajar primero, en qué orden y con qué métricas. No hay un programa estándar — hay uno diseñado para donde estás y adónde vas.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <div class="step-title">Tres meses de entrenamiento 1:1</div>
+          <div class="step-desc">Dos sesiones por semana más análisis de grabaciones y feedback entre sesiones. Seguimiento constante de tu performance, no solo de tu gramática.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <div class="step-title">Entrás al mercado lista</div>
+          <div class="step-desc">Con el perfil adaptado, las calls entrenadas y la presencia construida. El inglés ya no es el obstáculo — es tu herramienta.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="cta-kicker">El siguiente paso</div>
+    <h2 class="cta-title">Fluency is trained.<br><em>Confidence follows.</em></h2>
+    <p class="cta-sub">La sesión de diagnóstico es el punto de partida. Evaluamos tu perfil, tu nivel y si soy la persona indicada para lo que necesitás. Si es así, definimos el plan. Si no, te lo digo con la misma claridad.</p>
+    <div class="cta-btns">
+      <a class="btn-accent" href="https://calendly.com/abigailcernotto/30min" target="_blank">Agendá tu sesión de diagnóstico</a>
+      <div class="cta-or">o contactame directo</div>
+      <a class="cta-ig" href="https://www.instagram.com/businessenglish.abbie" target="_blank">@businessenglish.abbie en Instagram</a>
+      <div class="cta-note">La sesión de diagnóstico es gratuita.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2025 Abigail Cernotto · Business English</div>
+  <div>
+    <a href="https://instagram.com/businessenglish.abbie" target="_blank">Instagram</a> &nbsp;·&nbsp;
+    <a href="https://www.youtube.com/@abigailcernotto1703" target="_blank">YouTube</a> &nbsp;·&nbsp;
+    <a href="SPOTIFY_LINK_ACÁ" target="_blank">Spotify</a> &nbsp;·&nbsp;
+    <a href="https://calendly.com/abigailcernotto/30min" target="_blank">Calendly</a>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
